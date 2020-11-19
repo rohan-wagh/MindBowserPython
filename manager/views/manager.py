@@ -72,7 +72,7 @@ class ManagerApiView(GenericAPIView):
                 return Response({
                     STATE: FAILED,
                     MESSAGE: list(serializer.errors.values())[0][0],
-                }, status=status.HTTP_400_BAD_REQUEST)
+                }, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({
                 STATE: EXCEPTION,
